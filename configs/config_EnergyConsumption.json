@@ -1,0 +1,86 @@
+{
+  "system_name": "EnergyConsumption",
+  "system_type": "real",
+  "input_dim": 6,
+  "dt": 1.0,
+  "model_type": "EnKoMa",
+  "latent_dim": 64,
+  "seq_len": 60,
+  "pred_len": 30,
+  "train_time": 0.0,
+  "test_time": 0.0,
+  "batch_size": 32,
+  "epochs": 250,
+  "lr": 0.00015,
+  "optimizer": "adamw",
+  "noise_level": 0.0,
+  "train_seeds": [
+    42
+  ],
+  "test_seeds": [
+    100
+  ],
+  "system_params": {
+    "include_target": true
+  },
+  "use_detrend": true,
+  "data_path": "./data/real_data",
+  "dataset": "EnergyConsumption",
+  "short_steps": [
+    6,
+    12,
+    18
+  ],
+  "long_steps": [
+    36,
+    48,
+    60
+  ],
+  "save_dir": "compare_result",
+  "comparison_models": [
+    "EnKoMa",
+    "DeepKoopman",
+    "PureMamba",
+    "LSTM",
+    "Transformer",
+    "GRU",
+    "Linear"
+  ],
+  "use_spectral_loss": true,
+  "lambda_spectral": 0.03,
+  "lambda_stability": 0.03,
+  "spectral_max_iter": 25,
+  "alpha_rec": 0.3,
+  "alpha_pred": 4.5,
+  "alpha_spectral": 0.15,
+  "detrend_method": "polynomial",
+  "normalization_method": "robust",
+  "apply_smoothing": true,
+  "smoothing_sigma": 0.5,
+  "spectral_loss_interval": 5,
+  "use_curriculum_learning": true,
+  "grad_clip": 0.2,
+  "use_lr_scheduler": true,
+  "scheduler_type": "cosine",
+  "scheduler_eta_min": 0.00001,
+  "scheduler_step_size": null,
+  "scheduler_gamma": 0.95,
+  "use_early_stopping": true,
+  "early_stopping_patience": 20,
+  "early_stopping_min_delta": 0.0005,
+  "validation_split": 0.2,
+  "use_time_decay": false,
+  "time_decay_rate": 0.015,
+  "use_teacher_forcing": true,
+  "teacher_forcing_prob": 0.8,
+  "teacher_forcing_decay": 0.992,
+  "use_noise_injection": true,
+  "noise_injection_level": 0.01,
+  "use_adaptive_weighting": false,
+  "adaptive_rec_decay": 0.3,
+  "adaptive_pred_increase": 0.3,
+  "use_enhanced_residual": true,
+  "use_attention": true,
+  "attention_heads": 4
+}
+
